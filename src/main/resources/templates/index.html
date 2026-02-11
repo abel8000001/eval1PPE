@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiantes</title>
+</head>
+<body>
+<h1>Crear Estudiante</h1>
+<form th:action="@{/estudiantes}" method="post">
+    <label>Nombre: <input type="text" name="nombre"/></label><br/>
+    <label>Carrera: <input type="text" name="carrera"/></label><br/>
+    <button type="submit">Crear</button>
+</form>
+
+<h2>Lista de Estudiantes</h2>
+<ul>
+    <li th:each="e : ${estudiantes}">
+        <span th:text="${e.id}">id</span> -
+        <span th:text="${e.nombre}">nombre</span> -
+        <span th:text="${e.carrera}">carrera</span>
+    </li>
+</ul>
+</body>
+</html>
